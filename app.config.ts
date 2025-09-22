@@ -19,9 +19,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   icon: './assets/images/ic-launcher.png',
   android: {
     ...config.android,
-    googleServicesFile: process.env.GOOGLE_SERVICES_FILE_ANDROID ?? './.firebase/google-services.json',
     package: process.env.BUNDLE_IDENTIFIER,
-    permissions: ['android.permission.POST_NOTIFICATIONS'],
     adaptiveIcon: {
       backgroundImage: './assets/images/ic-launcher-background.png',
       monochromeImage: './assets/images/ic-launcher-foreground.png',
@@ -31,10 +29,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ios: {
     ...config.ios,
     bundleIdentifier: process.env.BUNDLE_IDENTIFIER,
-    entitlements: {
-      'aps-environment': process.env.NOTIFICATIONS_IOS_APS_ENVIRONMENT,
-    },
-    googleServicesFile: process.env.GOOGLE_SERVICES_FILE_IOS ?? './.firebase/GoogleService-Info.plist',
     infoPlist: {
       'ITSAppUsesNonExemptEncryption': false,
     },
@@ -99,8 +93,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     ],
     'expo-secure-store',
     'expo-web-browser',
-    '@react-native-firebase/app',
-    '@react-native-firebase/messaging',
     [
       '@sentry/react-native/expo',
       {

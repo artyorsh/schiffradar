@@ -4,8 +4,6 @@ import { StackTreeFactory } from './react-navigation/stack-tree-factory';
 import { ContainerModule, ResolutionContext } from 'inversify';
 
 import { AppModule } from '@/di';
-import { IAuthRoute } from '@/auth';
-import { IHomeRoute } from '@/home';
 import { ILocationPermissionRoute } from '@/location';
 import { ILogger, ILogService } from '@/log';
 import { IMapRoute } from '@/map';
@@ -15,8 +13,6 @@ import { createPerformanceMonitoringLayout } from './performance/performance-mon
 
 export type IRoute =
   | ISplashRoute
-  | IAuthRoute
-  | IHomeRoute
   | ILocationPermissionRoute
   | IMapRoute;
 
@@ -62,10 +58,6 @@ const createRouter = (context: ResolutionContext): IRouter => {
     layout: screenLayout,
     routeMap: () => ({
       '/': context.get<FC>(AppModule.SPLASH_SCREEN),
-      '/auth': context.get<FC>(AppModule.WELCOME_SCREEN),
-      '/auth/login': context.get<FC>(AppModule.LOGIN_SCREEN),
-      '/auth/register': context.get<FC>(AppModule.REGISTER_SCREEN),
-      '/home': context.get<FC>(AppModule.HOME_SCREEN),
       '/location-permission': context.get<FC>(AppModule.LOCATION_PERMISSION),
       '/map': context.get<FC>(AppModule.MAP_SCREEN),
     }),
