@@ -23,10 +23,6 @@ describe('ReactNavigationRouter', () => {
 
     router = new ReactNavigationRouter(logger, StackTreeFactory(() => ({
       '/': () => createElement(View, { testID: 'screen-root' }),
-      '/home': () => createElement(View, { testID: 'screen-home' }),
-      '/auth': () => createElement(View, { testID: 'screen-welcome' }),
-      '/auth/login': () => createElement(View, { testID: 'screen-login' }),
-      '/auth/register': () => createElement(View, { testID: 'screen-register' }),
       '/location-permission': () => createElement(View, { testID: 'screen-location-permission' }),
       '/map': () => createElement(View, { testID: 'screen-map' }),
     })));
@@ -42,23 +38,23 @@ describe('ReactNavigationRouter', () => {
   it('should mount target screen on navigate', async () => {
     const api = render(router.getWindow());
 
-    router.navigate('/home');
+    router.navigate('/map');
 
     await waitFor(() => {
-      expect(api.getByTestId('screen-home')).toBeTruthy();
+      expect(api.getByTestId('screen-map')).toBeTruthy();
     });
   });
 
   it('should unmount target screen, mount root screen on goBack', async () => {
     const api = render(router.getWindow());
 
-    router.navigate('/home');
+    router.navigate('/map');
 
     await new Promise((resolve) => setTimeout(resolve, NAVIGATION_EVENT_DEBOUNCE_MS));
     router.goBack();
 
     await waitFor(() => {
-      expect(api.queryByTestId('screen-home')).toBeFalsy();
+      expect(api.queryByTestId('screen-map')).toBeFalsy();
       expect(api.getByTestId('screen-root')).toBeTruthy();
     });
   });
@@ -76,13 +72,13 @@ describe('ReactNavigationRouter', () => {
 
   it('should notify target screen on focus, parent screen on blur', async () => {
     const onFocusListener = jest.fn();
-    router.subscribe('/home', { onFocus: onFocusListener });
+    router.subscribe('/map', { onFocus: onFocusListener });
 
     const onBlurListener = jest.fn();
     router.subscribe('/', { onBlur: onBlurListener });
 
     render(router.getWindow());
-    router.navigate('/home');
+    router.navigate('/map');
 
     await waitFor(() => {
       expect(onFocusListener).toHaveBeenCalledTimes(1);
@@ -92,13 +88,13 @@ describe('ReactNavigationRouter', () => {
 
   it('should notify target screen on blur, parent screen on focus', async () => {
     const onBlurListener = jest.fn();
-    router.subscribe('/home', { onBlur: onBlurListener });
+    router.subscribe('/map', { onBlur: onBlurListener });
 
     const onFocusListener = jest.fn();
     router.subscribe('/', { onFocus: onFocusListener });
 
     render(router.getWindow());
-    router.navigate('/home');
+    router.navigate('/map');
 
     await new Promise((resolve) => setTimeout(resolve, NAVIGATION_EVENT_DEBOUNCE_MS));
     router.goBack();
