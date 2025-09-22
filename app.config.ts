@@ -1,6 +1,6 @@
 import { ConfigContext, ExpoConfig } from 'expo/config';
 
-const projectId: string = '9fe3a870-cac3-4d43-a6a3-a291cd5fb90c';
+const projectId: string = 'a37a5db1-0403-447f-bebb-4be9d07f9659';
 
 /**
  * Font families as they stored in node_modules/@expo-google-fonts dir.
