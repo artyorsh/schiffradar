@@ -2,13 +2,13 @@ import { createElement, FC, useMemo } from 'react';
 import { ContainerModule, ResolutionContext } from 'inversify';
 
 import { AppModule } from '@/di';
+import { ILocationService } from '@/location';
 import { IRouter } from '@/router';
 
-import { ISessionService } from '../auth/session';
 import { ISplashVM, Splash } from './splash.component';
 import { IExpoSplashConfig, ISplashAnimation, ISplashScreenTask, SplashVM } from './splash.vm';
 import { SplashAnimation } from './splash-animation';
-import { SessionRestoreTask } from './tasks/session-restore-task';
+import { LocationPrefetchTask } from './tasks/location-prefetch-task';
 
 export type ISplashRoute = '/';
 
@@ -29,6 +29,7 @@ const createSplashScreen = (context: ResolutionContext): React.FC => {
 
 const createSplashViewModel = (context: ResolutionContext): ISplashVM => {
   const router: IRouter = context.get(AppModule.ROUTER);
+  const locationService: ILocationService = context.get(AppModule.LOCATION);
 
   const expoSplashConfig: IExpoSplashConfig = {
     backgroundColor: theme => theme.colors.background,
@@ -40,12 +41,11 @@ const createSplashViewModel = (context: ResolutionContext): ISplashVM => {
     duration: 400,
   });
 
-  const sessionService: ISessionService = context.get(AppModule.SESSION);
-  const sessionRestoreTask: ISplashScreenTask = new SessionRestoreTask(sessionService);
+  const prefetchTask: ISplashScreenTask = new LocationPrefetchTask(locationService);
 
   return new SplashVM(router, {
     ...expoSplashConfig,
-    task: sessionRestoreTask,
+    task: prefetchTask,
     animation: animation,
   });
 };

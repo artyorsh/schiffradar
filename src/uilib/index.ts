@@ -102,15 +102,15 @@ const palette = {
   basic800: '#424242',
   basic900: '#212121',
 
-  primary100: '#F0F8EC',
-  primary200: '#E0F2DA',
-  primary300: '#BED8B8',
-  primary400: '#93B191',
-  primary500: '#5F7D5F',
-  primary600: '#456B48',
-  primary700: '#2F5937',
-  primary800: '#1E4829',
-  primary900: '#123B20',
+  primary100: '#B3E5FC',
+  primary200: '#81D4FA',
+  primary300: '#4FC3F7',
+  primary400: '#29B6F6',
+  primary500: '#03A9F4',
+  primary600: '#1E88E5',
+  primary700: '#1976D2',
+  primary800: '#1565C0',
+  primary900: '#0D47A1',
 };
 
 const lightTheme = {

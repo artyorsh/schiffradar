@@ -6,6 +6,8 @@ import { AuthModule } from '@/auth';
 import { I18nModule } from '@/i18n';
 import { HttpModule } from '@/http';
 import { HomeScreenModule } from '@/home';
+import { LocationModule } from '@/location';
+import { MapScreenModule } from '@/map';
 import { LogModule } from '@/log';
 import { ModalModule } from '@/modal';
 import { PostsModule } from '@/posts';
@@ -32,6 +34,8 @@ container.load(
   PostsModule,
   SplashScreenModule,
   HomeScreenModule,
+  LocationModule,
+  MapScreenModule,
 );
 
 registerRootComponent(() => {

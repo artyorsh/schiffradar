@@ -6,7 +6,9 @@ import { ContainerModule, ResolutionContext } from 'inversify';
 import { AppModule } from '@/di';
 import { IAuthRoute } from '@/auth';
 import { IHomeRoute } from '@/home';
+import { ILocationPermissionRoute } from '@/location';
 import { ILogger, ILogService } from '@/log';
+import { IMapRoute } from '@/map';
 import { ISplashRoute } from '@/splash';
 
 import { createPerformanceMonitoringLayout } from './performance/performance-monitoring-layout';
@@ -14,7 +16,9 @@ import { createPerformanceMonitoringLayout } from './performance/performance-mon
 export type IRoute =
   | ISplashRoute
   | IAuthRoute
-  | IHomeRoute;
+  | IHomeRoute
+  | ILocationPermissionRoute
+  | IMapRoute;
 
 export type IRouteParams = Record<string, any>;
 
@@ -62,6 +66,8 @@ const createRouter = (context: ResolutionContext): IRouter => {
       '/auth/login': context.get<FC>(AppModule.LOGIN_SCREEN),
       '/auth/register': context.get<FC>(AppModule.REGISTER_SCREEN),
       '/home': context.get<FC>(AppModule.HOME_SCREEN),
+      '/location-permission': context.get<FC>(AppModule.LOCATION_PERMISSION),
+      '/map': context.get<FC>(AppModule.MAP_SCREEN),
     }),
   }));
 };

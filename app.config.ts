@@ -79,6 +79,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     ],
     'expo-localization',
     [
+      'expo-location',
+      {
+        locationAlwaysAndWhenInUsePermission: 'Schiffradar needs access to your location to show your position on the map.',
+        isIosBackgroundLocationEnabled: true,
+        isAndroidBackgroundLocationEnabled: true,
+      },
+    ],
+    [
       'expo-splash-screen',
       {
         'backgroundColor': '#F5F5F5', // uilib > colors.background
@@ -90,6 +98,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     'expo-secure-store',
+    'expo-web-browser',
     '@react-native-firebase/app',
     '@react-native-firebase/messaging',
     [
@@ -98,6 +107,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         'url': 'https://sentry.io/',
         'project': process.env.SENTRY_PROJECT,
         'organization': process.env.SENTRY_ORGANIZATION,
+      },
+    ],
+    [
+      '@rnmapbox/maps',
+      {
+        RNMapboxMapsDownloadToken: process.env.EXPO_PUBLIC_MAPBOX_RNMapboxMapsDownloadToken,
       },
     ],
   ],

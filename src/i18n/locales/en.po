@@ -74,3 +74,19 @@ msgstr "Register"
 #: src/auth/welcome/welcome.component.tsx:22
 msgid "welcome.title"
 msgstr "Welcome"
+
+#: src/location/permission-request/location-permission-request.component.tsx:39
+msgid "location.permission_request.body"
+msgstr "Allow Schiffradar to use location services to show your location in the map."
+
+#: src/location/permission-request/location-permission-request.component.tsx:44
+msgid "location.permission_request.continue_button"
+msgstr "Continue"
+
+#: src/location/permission-request/location-permission-request.component.tsx:36
+msgid "location.permission_request.title"
+msgstr "Use location services"
+
+#: src/map/vessel-details/vessel-details.component.tsx:40
+msgid "map.vessel_details.view_details_button"
+msgstr "View on MarineTraffic"
