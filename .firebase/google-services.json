@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:4409606261:android:56c2768fd62d25deb9783c",
         "android_client_info": {
-          "package_name": "me.artyorsh.rnapp.preview"
+          "package_name": "me.artyorsh.schiffradar.preview"
         }
       },
       "oauth_client": [

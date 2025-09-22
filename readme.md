@@ -1,9 +1,14 @@
-# expo-template
+# Schiffradar
 
-[![Validate](https://github.com/artyorsh/expo-template/actions/workflows/validate.yml/badge.svg?event=push&branch=main)](https://github.com/artyorsh/expo-template/actions?query=branch%3Amain+event%3Apush)
-[![Build](https://github.com/artyorsh/expo-template/actions/workflows/build.yml/badge.svg?event=schedule&branch=main)](https://github.com/artyorsh/expo-template/actions?query=branch%3Amain+event%3Aschedule)
+[![Validate](https://github.com/artyorsh/schiffradar/actions/workflows/validate.yml/badge.svg?event=push&branch=main)](https://github.com/artyorsh/schiffradar/actions?query=branch%3Amain+event%3Apush)
+[![Build](https://github.com/artyorsh/schiffradar/actions/workflows/build.yml/badge.svg?event=schedule&branch=main)](https://github.com/artyorsh/schiffradar/actions?query=branch%3Amain+event%3Aschedule)
 
-React Native template with built-in modules, automation workflows and customisation options.
+## Description
+
+Schiffradar (German for "Ship Radar") - a mobile application that tracks vessels in real-time using AIS data.
+Works in combination with [aisstream.io ingestion server](https://github.com/artyorsh/schiffradar-api).
+
+<img src="./screenshots/preview.png" />
 
 ## Stack
 
@@ -15,21 +20,21 @@ React Native template with built-in modules, automation workflows and customisat
 - [![inversifyjs](https://img.shields.io/badge/inversifyjs-8.1-blue)](https://github.com/inversify/InversifyJS/releases)
 - [![jest](https://img.shields.io/badge/jest-29.7-blue)](https://github.com/jestjs/jest/releases)
 - [![react-native-testing-library](https://img.shields.io/badge/testing--library-13.3-blue)](https://github.com/callstack/react-native-testing-library/releases)
+- [![@rnmapbox/maps](https://img.shields.io/badge/@rnmapbox/maps-10.1-blue)](https://github.com/rnmapbox/maps/releases)
 - [![typescript](https://img.shields.io/badge/typescript-5.9-blue)](https://github.com/microsoft/TypeScript/releases)
 - [![eslint](https://img.shields.io/badge/eslint-9.38-blue)](https://github.com/eslint/eslint/releases)
 
 ## Features
 
+- AIS data polling with advanced configuration options (see [architecture components](#key-architecture-components)).
+- Interactive map with markers and data clustering.
+- Location permissions.
+- Vessel details via [MarineTraffic.com](https://www.marinetraffic.com/).
 - Splash Screen Animation, fully compatible with expo-splash-screen.
-- Authentication flows via [NestJS Authentication Server](https://github.com/artyorsh/nestjs-simple-auth).
-- Push Notifications via [Firebase](https://rnfirebase.io/messaging/usage#what-does-it-do).
-- Light and Dark themes with [flexible customization](https://github.com/artyorsh/expo-template/wiki/Branding).
-- Localizatoin and multi-language support via [lingui](https://lingui.dev).
-- Crash reporting with [Sentry](https://sentry.io).
-- Remote logging with [Grafana](https://github.com/artyorsh/grafana-mobile-o11y).
-- CI/CD with GitHub Actions and [EAS](https://expo.dev/eas).
-- Modularized architecture with [Dependency Injection](https://inversify.io).
-- PR reviews with [Claude](https://github.com/anthropics/claude-code-action#claude-code-action).
+- Light and Dark themes with flexible customization.
+- CI/CD with GitHub Actions and EAS.
+- Localization and multi-language support via [lingui](https://lingui.dev).
+- Modularized architecture with Dependency Injection.
 
 ## Setup
 
@@ -41,6 +46,10 @@ bun i
 
 ```bash
 cp .env.example .env
+# Update the:
+# - EXPO_PUBLIC_HTTP_BASE_URL
+# - EXPO_PUBLIC_MAPBOX_ACCESS_TOKEN,
+# - EXPO_PUBLIC_MAPBOX_RNMapboxMapsDownloadToken
 ```
 
 ## Running
@@ -51,14 +60,23 @@ Start Metro bundler and follow the instructions in terminal to run the app.
 bun run start
 ```
 
-## Documentation
+## Location
 
-See [docs](./docs/readme.md).
+Zuidpier IJmuiden: 52.4637027,4.5297216 (or anything within the ingestor bbox).
 
-## Example apps
+### Android
 
-- [Schiffradar](https://github.com/artyorsh/schiffradar)
-- [LiquidChat](https://github.com/artyorsh/liquid-chat)
+- Configure: Emulator > More > Location > Search
+- Reset permissions:`adb shell pm reset-permissions`
+
+### iOS
+
+- Configure: Simulator > Features > Location > Custom Location
+- Reset permissions: Reinstall the app or `xcrun simctl erase all`
+
+## Other apps
+
+[LiquidChat](https://github.com/artyorsh/liquid-chat)
 
 ## Author
 
