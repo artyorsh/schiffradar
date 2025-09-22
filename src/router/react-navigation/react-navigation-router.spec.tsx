@@ -27,6 +27,8 @@ describe('ReactNavigationRouter', () => {
       '/auth': () => createElement(View, { testID: 'screen-welcome' }),
       '/auth/login': () => createElement(View, { testID: 'screen-login' }),
       '/auth/register': () => createElement(View, { testID: 'screen-register' }),
+      '/location-permission': () => createElement(View, { testID: 'screen-location-permission' }),
+      '/map': () => createElement(View, { testID: 'screen-map' }),
     })));
   });
 
