@@ -7,6 +7,7 @@ export const AppModule = {
   PERMISSION: Symbol.for('PermissionService'),
   PROCESS_INFO: Symbol.for('ProcessInfoService'),
   PUSH_NOTIFICATION: Symbol.for('PushNotificationService'),
+  LOCATION: Symbol.for('LocationService'),
   MODAL: Symbol.for('ModalService'),
   SESSION: Symbol.for('SessionService'),
   USER: Symbol.for('UserService'),
@@ -20,4 +21,6 @@ export const AppModule = {
   LOGIN_SCREEN: Symbol.for('LoginScreen'),
   REGISTER_SCREEN: Symbol.for('RegisterScreen'),
   HOME_SCREEN: Symbol.for('HomeScreen'),
+  MAP_SCREEN: Symbol.for('MapScreen'),
+  LOCATION_PERMISSION: Symbol.for('LocationPermissionScreen'),
 };

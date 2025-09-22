@@ -14,6 +14,7 @@ export const Icons = {
   Back: (props: IconProps) => createElement(IconComponent, { ...props, name: 'arrow-back' }),
   Bell: (props: IconProps) => createElement(IconComponent, { ...props, name: 'notifications' }),
   Close: (props: IconProps) => createElement(IconComponent, { ...props, name: 'close' }),
+  Location: (props: IconProps) => createElement(IconComponent, { ...props, name: 'location-searching' }),
   Logout: (props: IconProps) => createElement(IconComponent, { ...props, name: 'logout' }),
   Share: (props: IconProps) => createElement(IconComponent, { ...props, name: 'share' }),
 };
