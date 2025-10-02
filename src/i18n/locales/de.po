@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: 2025-10-02 17:46+0200\n"
 "PO-Revision-Date: 2025-10-02 21:49+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: German <http://weblate.example.com/projects/schiffradar/main/"
-"de/>\n"
+"Language-Team: German <http://weblate.example.com/projects/schiffradar/main/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -14,17 +13,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.13.3\n"
 
-#: src/location/permission-request/location-permission-request.component.tsx:39
+#: src/location/permission-request/location-permission-request.component.tsx:38
 msgid "location.permission_request.body"
-msgstr ""
-"Erlaube Schiffradar, Standortdienste zu verwenden, um deinen Standort auf "
-"der Karte anzuzeigen."
+msgstr "Erlaube Schiffradar, Standortdienste zu verwenden, um deinen Standort auf der Karte anzuzeigen."
 
-#: src/location/permission-request/location-permission-request.component.tsx:44
+#: src/location/permission-request/location-permission-request.component.tsx:42
 msgid "location.permission_request.continue_button"
 msgstr "Fortfahren"
 
-#: src/location/permission-request/location-permission-request.component.tsx:36
+#: src/location/permission-request/location-permission-request.component.tsx:35
 msgid "location.permission_request.title"
 msgstr "Standortdienste verwenden"
 
