@@ -10,7 +10,8 @@ import { ITranslationProvider, LinguiI18nService } from './lingui-i18n.service';
 import { LocalTranslationProvider } from './local-translation-provider';
 
 export type ISupportedLocale =
-  | 'en';
+  | 'en'
+  | 'de';
 
 export interface II18nService {
   getCurrentLocale(): ISupportedLocale;
@@ -46,6 +47,13 @@ const createTranslationProvider = (context: ResolutionContext): ITranslationProv
 
         // eslint-disable-next-line @typescript-eslint/no-require-imports
         return require('./locales/en.po').messages;
+      },
+      de: () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        require('@formatjs/intl-pluralrules/locale-data/de');
+
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return require('./locales/de.po').messages;
       },
     },
   });
