@@ -13,15 +13,15 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/location/permission-request/location-permission-request.component.tsx:39
+#: src/location/permission-request/location-permission-request.component.tsx:38
 msgid "location.permission_request.body"
 msgstr "Allow Schiffradar to use location services to show your location in the map."
 
-#: src/location/permission-request/location-permission-request.component.tsx:44
+#: src/location/permission-request/location-permission-request.component.tsx:42
 msgid "location.permission_request.continue_button"
 msgstr "Continue"
 
-#: src/location/permission-request/location-permission-request.component.tsx:36
+#: src/location/permission-request/location-permission-request.component.tsx:35
 msgid "location.permission_request.title"
 msgstr "Use location services"
 

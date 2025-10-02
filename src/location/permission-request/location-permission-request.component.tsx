@@ -32,17 +32,14 @@ export const LocationPermissionRequest: React.FC<{ vm: ILocationPermissionReques
       <Text
         style={styles.title}
         category='heading'>
-        {/*{'Use location services'}*/}
         {t`location.permission_request.title`}
       </Text>
       <Text style={styles.body}>
         {t`location.permission_request.body`}
-        {/*{'Allow Schiffradar to use location services to show your location in the map.'}*/}
       </Text>
       <Button
         testID='@permission-request/continue'
         title={t`location.permission_request.continue_button`}
-        // title='Continue'
         onPress={() => vm.requestPermissions()}
       />
     </SafeArea>
