@@ -15,7 +15,7 @@ const fontFamilies: string[] = [
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: process.env.APP_NAME,
-  slug: 'rnapp',
+  slug: 'schiffradar',
   newArchEnabled: true,
   icon: './assets/images/ic-launcher.png',
   android: {
