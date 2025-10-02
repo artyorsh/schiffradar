@@ -12,6 +12,15 @@ const fontFamilies: string[] = [
   'Inter/600SemiBold',
 ];
 
+/**
+ * Native localization files stored in ./src/i18n/locales (prefixed with 'native-').
+ * @see https://docs.expo.dev/guides/localization/#translating-app-metadata
+ */
+const locales: string[] = [
+  'en',
+  'de',
+];
+
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: process.env.APP_NAME,
@@ -31,6 +40,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     ...config.ios,
     bundleIdentifier: process.env.BUNDLE_IDENTIFIER,
     infoPlist: {
+      'CFBundleAllowMixedLocalizations': true,
       'ITSAppUsesNonExemptEncryption': false,
     },
   },
@@ -39,6 +49,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       projectId,
     },
   },
+  locales: locales
+    .reduce((acc, locale) => ({ ...acc, [locale]: `./src/i18n/locales/native-${locale}.json` }), {}),
   updates: {
     url: `https://u.expo.dev/${projectId}`,
   },
@@ -72,7 +84,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       'expo-location',
       {
-        locationAlwaysAndWhenInUsePermission: 'Schiffradar needs access to your location to show your position on the map.',
         isIosBackgroundLocationEnabled: true,
         isAndroidBackgroundLocationEnabled: true,
       },
