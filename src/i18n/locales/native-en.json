@@ -1,0 +1,5 @@
+{
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Schiffradar needs access to your location to show your position on the map."
+  }
+}
