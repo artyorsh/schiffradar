@@ -40,8 +40,41 @@ export class LinguiI18nService implements II18nService {
     const supportedLocales: string[] = this.config.translationProvider.getSupportedLocales();
 
     return supportedLocales.map(locale => ({
-      name: `Locale: ${locale}`,
+      name: `Locale: ${locale} ${this.getLocaleFlagEmoji(locale as ISupportedLocale)}`,
       callback: () => this.setLocale(locale),
     }));
+  }
+
+  private getLocaleFlagEmoji(locale: ISupportedLocale): string {
+    switch (locale) {
+      case 'de':
+        return '🇩🇪';
+
+      case 'be':
+        return '🇧🇾';
+
+      case 'cs':
+        return '🇨🇿';
+
+      case 'es':
+        return '🇪🇸';
+
+      case 'fr':
+        return '🇫🇷';
+
+      case 'it':
+        return '🇮🇹';
+
+      case 'pl':
+        return '🇵🇱';
+
+      case 'uk':
+        return '🇺🇦';
+
+      case 'en':
+
+      default:
+        return '🇬🇧';
+    }
   }
 }
