@@ -11,7 +11,14 @@ import { LocalTranslationProvider } from './local-translation-provider';
 
 export type ISupportedLocale =
   | 'en'
-  | 'de';
+  | 'de'
+  | 'be'
+  | 'cs'
+  | 'es'
+  | 'fr'
+  | 'it'
+  | 'pl'
+  | 'uk';
 
 export interface II18nService {
   getCurrentLocale(): ISupportedLocale;
@@ -54,6 +61,55 @@ const createTranslationProvider = (context: ResolutionContext): ITranslationProv
 
         // eslint-disable-next-line @typescript-eslint/no-require-imports
         return require('./locales/de.po').messages;
+      },
+      be: () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        require('@formatjs/intl-pluralrules/locale-data/be');
+
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return require('./locales/be.po').messages;
+      },
+      cs: () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        require('@formatjs/intl-pluralrules/locale-data/cs');
+
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return require('./locales/cs.po').messages;
+      },
+      es: () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        require('@formatjs/intl-pluralrules/locale-data/es');
+
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return require('./locales/es.po').messages;
+      },
+      fr: () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        require('@formatjs/intl-pluralrules/locale-data/fr');
+
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return require('./locales/fr.po').messages;
+      },
+      it: () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        require('@formatjs/intl-pluralrules/locale-data/it');
+
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return require('./locales/it.po').messages;
+      },
+      pl: () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        require('@formatjs/intl-pluralrules/locale-data/pl');
+
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return require('./locales/pl.po').messages;
+      },
+      uk: () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        require('@formatjs/intl-pluralrules/locale-data/uk');
+
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return require('./locales/uk.po').messages;
       },
     },
   });
