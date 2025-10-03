@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: 2025-10-02 17:46+0200\n"
 "PO-Revision-Date: 2025-10-03 08:13+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Spanish <http://weblate.example.com/projects/schiffradar/main/"
-"es/>\n"
+"Language-Team: Spanish <http://weblate.example.com/projects/schiffradar/main/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -16,9 +15,7 @@ msgstr ""
 
 #: src/location/permission-request/location-permission-request.component.tsx:39
 msgid "location.permission_request.body"
-msgstr ""
-"Permitir que Schiffradar utilice los servicios de ubicación para mostrar su "
-"ubicación en el mapa."
+msgstr "Permitir que Schiffradar utilice los servicios de ubicación para mostrar su ubicación en el mapa."
 
 #: src/location/permission-request/location-permission-request.component.tsx:44
 msgid "location.permission_request.continue_button"
