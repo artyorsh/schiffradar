@@ -3,29 +3,32 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-02 17:46+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-10-04 10:58+0000\n"
+"Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
+"Language-Team: Polish <http://weblate.example.com/projects/schiffradar/main/"
+"pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: @lingui/cli\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #: src/location/permission-request/location-permission-request.component.tsx:38
 msgid "location.permission_request.body"
 msgstr ""
+"Zezwól Schiffradar na korzystanie z usług lokalizacyjnych, aby pokazać Twoją "
+"lokalizację na mapie."
 
 #: src/location/permission-request/location-permission-request.component.tsx:42
 msgid "location.permission_request.continue_button"
-msgstr ""
+msgstr "Kontynuuj"
 
 #: src/location/permission-request/location-permission-request.component.tsx:35
 msgid "location.permission_request.title"
-msgstr ""
+msgstr "Użyj usług lokalizacyjnych"
 
 #: src/map/vessel-details/vessel-details.component.tsx:40
 msgid "map.vessel_details.view_details_button"
-msgstr ""
+msgstr "Zobacz na MarineTraffic"
